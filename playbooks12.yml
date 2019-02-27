@@ -1,0 +1,14 @@
+---
+- hosts: slave
+  user: ansible
+  sudo: yes
+  connection: ssh
+  tasks:
+  - name: first name
+    raw: echo "SHAMU" > /tmp/LOG
+    tags:
+      - first name
+  - name: second name
+    raw: echo "SREE" > /tmp/LOG
+    tags:
+      - second name

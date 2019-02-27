@@ -1,0 +1,5 @@
+---
+- hosts: slave
+  tasks:
+  - name: install httpd on server
+    yum: pkg=httpd state=installed update_cache=true

@@ -1,0 +1,11 @@
+---
+- hosts: slave
+  user: ansible
+  sudo: yes
+  connection: ssh
+  tasks:
+    - include: includestat.yml
+    - name: verify the httpd is installed
+      command: yum list installed | grep httpd > /tmp/result.log
+
+
